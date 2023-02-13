@@ -1,0 +1,18 @@
+{
+  "Unit test module": {
+    "prefix": "tests",
+    "body": [
+      "#[cfg(test)]",
+      "mod tests {",
+      "    use super::*;",
+      "",
+      "    #[test]",
+      "    fn it_works() {",
+      "        $1",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Unit test module"
+  }
+}
