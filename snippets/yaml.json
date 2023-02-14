@@ -21,4 +21,27 @@
     ],
     "description": "docker-compose postgres"
   }
+  "mssql docker compose file": {
+    "prefix": "mssql",
+    "body": [
+      "version: '3.8'",
+      "services:",
+      "  mssql:",
+      "    image: mcr.microsoft.com/mssql/server:2022-latest",
+      "    container_name: mssql",
+      "    restart: always",
+      "    ports:",
+      "      - '1433:1433'",
+      "    environment:",
+      "      - ACCEPT_EULA=Y",
+      "      - MSSQL_SA_PASSWORD=yourStrong(!)Password",
+      "    volumes:",
+      "      - .docker/mssql/data:/var/opt/mssql/data",
+      "volumes:",
+      "  db:",
+      "    driver: local",
+      ""
+    ],
+    "description": "mssql docker compose file"
+  }
 }

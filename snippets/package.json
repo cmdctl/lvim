@@ -6,19 +6,9 @@
   },
   "contributes": {
     "snippets": [
-      {
-        "language": "rust",
-        "path": "./rust.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./react-typescript.json"
-      },
-      {
-        "language": "yaml",
-        "path": "./yaml.json
-      }
-
+      { "language": "rust", "path": "./rust.json" },
+      { "language": "typescriptreact", "path": "./react-typescript.json" },
+      { "language": "yaml", "path": "./yaml.json" }
     ]
   }
 }
