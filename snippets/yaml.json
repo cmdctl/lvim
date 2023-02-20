@@ -1,10 +1,10 @@
 {
   "docker-compose postgres": {
-    "prefix": "postgres",
+    "prefix": "pg",
     "body": [
       "version: '3.8'",
       "services:",
-      "  db:",
+      "  postgres:",
       "    image: postgres:14.1-alpine",
       "    restart: always",
       "    environment:",
@@ -20,7 +20,7 @@
       ""
     ],
     "description": "docker-compose postgres"
-  }
+  },
   "mssql docker compose file": {
     "prefix": "mssql",
     "body": [

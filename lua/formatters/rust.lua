@@ -1,1 +1,1 @@
-return { command = "rustfmt", filetypes = { "rust" } }
+return { command = "RustFmt", filetypes = { "rust" } }
