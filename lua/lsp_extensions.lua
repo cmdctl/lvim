@@ -16,13 +16,21 @@ local on_list = function(options)
   if items == nil or vim.tbl_isempty(items) then
     return
   end
+  local filtered_items = {}
   if #items == 2 then
-    items = vim.tbl_filter(filter_item, items)
+    filtered_items = vim.tbl_filter(filter_item, items)
+  end
+  if #filtered_items > 0 then
+    items = filtered_items
   end
   print("filtered items")
   print(vim.inspect(items))
-  vim.fn.setqflist({}, ' ', { title = options.title, items = items, context = options.context })
-  vim.api.nvim_command('cfirst')
+  vim.fn.setqflist({}, 'r', { title = options.title, items = items, context = options.context })
+  if #items == 1 then
+    vim.api.nvim_command('cfirst')
+  else
+    vim.api.nvim_command('copen')
+  end
 end
 
 function M.go_to_definition_typescript()
@@ -33,6 +41,3 @@ function M.go_to_definition_typescript()
 end
 
 return M
-
-
-

@@ -10,5 +10,12 @@
       ""
     ],
     "description": "React functional component"
+  },
+  "console log": {
+    "prefix": "l",
+    "body": [
+      "console.log('$1', $2);"
+    ],
+    "description": "Better console log"
   }
 }
