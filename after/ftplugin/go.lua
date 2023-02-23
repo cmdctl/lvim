@@ -76,9 +76,9 @@ end
 
 
 local go_tests_diagnostics = function()
-  print(ns)
   local bufnr = vim.api.nvim_get_current_buf()
   vim.api.nvim_buf_clear_namespace(bufnr, ns, 0, -1)
+
   local state = {
     bufnr = bufnr,
     tests = {},
@@ -136,12 +136,28 @@ local go_tests_diagnostics = function()
               severity = vim.diagnostic.severity.ERROR,
               source = "go-test",
               code = "ERROR",
-              message = table.concat(test.output, " "),
+              message = "Test failed",
               user_data = {}
             })
           end
         end
       end
+      vim.api.nvim_buf_create_user_command(state.bufnr, "GoTestLineDiag", function()
+        local line = vim.fn.line(".") - 1
+        for _, test in pairs(state.tests) do
+          if test.line == line then
+            -- vim.cmd.new()
+            -- vim.api.nvim_buf_set_lines(vim.api.nvim_get_current_buf(), 0, -1, false, test.output)
+            -- vim.lsp.util.open_floating_preview(test.output, "plaintext", {})
+            local buffer = vim.api.nvim_create_buf(false, true)
+            vim.api.nvim_buf_set_lines(buffer, 0, -1, false, test.output)
+            vim.api.nvim_buf_set_option(buffer, "buftype", "nofile")
+            vim.api.nvim_buf_set_option(buffer, "bufhidden", "wipe")
+            vim.api.nvim_buf_set_option(buffer, "swapfile", false)
+            vim.api.nvim_command("vsplit | b" .. buffer)
+          end
+        end
+      end, {})
       vim.diagnostic.set(ns, bufnr, failed, {})
     end
   })
@@ -152,3 +168,4 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*_test.go",
   callback = go_tests_diagnostics,
 })
+

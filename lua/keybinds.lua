@@ -10,6 +10,7 @@ lvim.keys.normal_mode["<C-t>"] = ':lua require"jester".run({path_to_jest_run="np
 -- move between buffers
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["gtl"] = ":GoTestLineDiag<CR>"
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
   h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" }
