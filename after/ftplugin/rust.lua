@@ -11,4 +11,3 @@ augroup RustfmtRemapping
   autocmd FileType rust nnoremap <buffer> <Leader>lf :Rustfmt<CR>
 augroup END
 ]])
-

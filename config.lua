@@ -3,9 +3,6 @@ require("keybinds")
 require("treesitter")
 require("formatters")
 
-require("autoruns.rustfmt")
-
-
 lvim.plugins = {
   require("plugins.copilot"),
   { "jparise/vim-graphql" },
