@@ -2,7 +2,7 @@ require("general")
 require("keybinds")
 require("treesitter")
 require("formatters")
-require("autocmd.go")
+require("autocmd.go-test")
 
 lvim.plugins = {
   require("plugins.copilot"),
