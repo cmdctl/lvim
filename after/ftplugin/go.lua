@@ -168,4 +168,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*_test.go",
   callback = go_tests_diagnostics,
 })
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup(groupname, { clear = true }),
+  pattern = "*_test.go",
+  callback = go_tests_diagnostics,
+})
 
