@@ -1,4 +1,4 @@
-local autocmd = require("autocmd.go")
+local autocmd = require("autocmd.go-test")
 
 vim.api.nvim_create_user_command("GoTestsWatch", function()
   vim.api.nvim_create_autocmd("BufWritePost", {
