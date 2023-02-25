@@ -12,12 +12,7 @@ vim.api.nvim_create_user_command("GoTestsStop", function()
   vim.api.nvim_create_augroup(autocmd.groupname, { clear = true })
 end, {})
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = vim.api.nvim_create_augroup(autocmd.inlinegorupname, { clear = true }),
-  pattern = "*_test.go",
-  callback = autocmd.go_tests_diagnostics,
-})
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd({"BufWritePost", "BufEnter"}, {
   group = vim.api.nvim_create_augroup(autocmd.inlinegorupname, { clear = true }),
   pattern = "*_test.go",
   callback = autocmd.go_tests_diagnostics,
