@@ -4,6 +4,8 @@ require("treesitter")
 require("formatters")
 require("autocmd.go-test")
 
+require("dblens.execute")
+
 lvim.plugins = {
   require("plugins.copilot"),
   { "jparise/vim-graphql" },

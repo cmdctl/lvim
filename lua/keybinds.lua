@@ -16,13 +16,11 @@ lvim.builtin.which_key.mappings["r"] = {
   h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" }
 }
 
-
 -- lsp mappings
 local extentions = require('lsp_extensions')
 
 require('lspconfig')['tsserver'].setup({
-  on_attach = function (client, bufnr)
+  on_attach = function()
     lvim.lsp.buffer_mappings.normal_mode["gd"] = { extentions.go_to_definition_typescript, "Go to definition" }
   end
 })
-
