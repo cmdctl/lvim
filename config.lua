@@ -9,7 +9,6 @@ require("dblens.execute")
 lvim.plugins = {
   require("plugins.copilot"),
   { "jparise/vim-graphql" },
-  { "David-Kunz/jester" },
   { "nvim-treesitter/playground" },
   require("plugins.rust"),
   { "alx741/vim-rustfmt" },

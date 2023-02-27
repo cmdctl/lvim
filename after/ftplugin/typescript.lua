@@ -1,7 +1,13 @@
+local autocmd = require("autocmd.jest-test")
 
--- use the following query to find all test functions in jest
+vim.api.nvim_create_user_command("JestTestsWatch", function()
+  vim.api.nvim_create_autocmd("BufWritePost", {
+    group = vim.api.nvim_create_augroup(autocmd.groupname, { clear = true }),
+    pattern = { "*.ts", "*.tsx" },
+    callback = autocmd.debaunce(autocmd.watch_tests(), 2000),
+  })
+end, {})
 
--- (expression_statement
---   (call_expression
---     (identifier) @fname 
---     (arguments (string) @testname)) @expr)
+vim.api.nvim_create_user_command("JestTestsStop", function()
+  vim.api.nvim_create_augroup(autocmd.groupname, { clear = true })
+end, {})
