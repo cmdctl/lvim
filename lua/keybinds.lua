@@ -10,7 +10,8 @@ vim.cmd("autocmd FileType typescript nmap <C-t> :JestTestsWatch<CR>")
 
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
-  h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" }
+  h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" },
+  s ={ "<cmd>SqlExecute<CR>", "Execute the current SQL file to an active conenction" }
 }
 -- lsp mappings
 local extentions = require('lsp_extensions')
