@@ -20,6 +20,17 @@ M.debaunce = function(fn, delay)
   end
 end
 
+local function strip_ansi(str)
+  return str:gsub("\27%[%d+m", "")
+end
+
+local function strip_ansi_table(tbl)
+  for i, str in ipairs(tbl) do
+    tbl[i] = strip_ansi(str)
+  end
+  return tbl
+end
+
 M.watch_tests = function()
   local bufnr = vim.api.nvim_create_buf(false, true)
   vim.api.nvim_buf_set_option(bufnr, "buftype", "nofile")
@@ -30,7 +41,8 @@ M.watch_tests = function()
     local filepath = vim.api.nvim_buf_get_name(0)
     local append_data = function(_, data, _)
       if data then
-        vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, data)
+        print(vim.inspect(data))
+        vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, strip_ansi_table(data))
       end
     end
     print(vim.api.nvim_buf_is_valid(bufnr))

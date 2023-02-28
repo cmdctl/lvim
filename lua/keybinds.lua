@@ -7,6 +7,8 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")
 vim.cmd("autocmd FileType typescript nmap <C-t> :JestTestsWatch<CR>")
+vim.cmd("autocmd FileType typescriptreact nmap <C-t> :JestTestsWatch<CR>")
+vim.cmd("autocmd FileType typescriptreact nmap <C-t>s :JestTestsStop<CR>")
 
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
