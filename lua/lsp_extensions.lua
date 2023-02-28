@@ -11,8 +11,6 @@ end
 
 local on_list = function(options)
   local items = options.items
-  print("initial items")
-  print(vim.inspect(items))
   if items == nil or vim.tbl_isempty(items) then
     return
   end
@@ -23,8 +21,6 @@ local on_list = function(options)
   if #filtered_items > 0 then
     items = filtered_items
   end
-  print("filtered items")
-  print(vim.inspect(items))
   vim.fn.setqflist({}, 'r', { title = options.title, items = items, context = options.context })
   if #items == 1 then
     vim.api.nvim_command('cfirst')
