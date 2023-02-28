@@ -41,15 +41,11 @@ M.watch_tests = function()
     local filepath = vim.api.nvim_buf_get_name(0)
     local append_data = function(_, data, _)
       if data then
-        print(vim.inspect(data))
         vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, strip_ansi_table(data))
       end
     end
-    print(vim.api.nvim_buf_is_valid(bufnr))
     if vim.api.nvim_buf_is_valid(bufnr) == false then
-      print("old bufnr ", bufnr, " is not valid, creating new one")
       bufnr = vim.api.nvim_create_buf(false, true)
-      print("new bufnr ", bufnr)
       vim.api.nvim_buf_set_option(bufnr, "buftype", "nofile")
       vim.api.nvim_buf_set_option(bufnr, "bufhidden", "wipe")
       vim.api.nvim_buf_set_option(bufnr, "swapfile", false)
