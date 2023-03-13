@@ -5,6 +5,7 @@ require("formatters")
 require("autocmd.go-test")
 
 require("dblens.execute")
+-- require("custom_lsp")
 
 lvim.plugins = {
   require("plugins.copilot"),
