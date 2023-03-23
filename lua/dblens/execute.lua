@@ -10,11 +10,15 @@ M.execute = function()
     vim.api.nvim_buf_set_option(bufnr, 'bufhidden', 'wipe')
     vim.api.nvim_buf_set_option(bufnr, 'swapfile', false)
     vim.api.nvim_buf_set_option(bufnr, 'filetype', 'json')
-    vim.api.nvim_command("vsplit | b" .. bufnr)
+    vim.api.nvim_command("split | b" .. bufnr)
     M.state.bufnr = bufnr
   end
 
   local lines = vim.api.nvim_buf_get_lines(curr_buf, 0, -1, false)
+  -- remove all lines that start with '--'
+  lines = vim.tbl_filter(function(line)
+    return not string.match(line, '^%s*%-%-')
+  end, lines)
   local selected_sql = table.concat(lines, "\n")
 
 
@@ -23,7 +27,7 @@ M.execute = function()
       vim.api.nvim_buf_set_lines(M.state.bufnr, -1, -1, false, data)
     end
   end
-  local jobid = vim.fn.jobstart("dblens exec", {
+  local jobid = vim.fn.jobstart("tengu exec", {
     stdout_buffered = true,
     on_stdout = append_data,
     on_stderr = append_data,
