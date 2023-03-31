@@ -4,8 +4,8 @@ require("treesitter")
 require("formatters")
 require("autocmd.go-test")
 
-require("dblens.execute")
-require("custom_lsp")
+require("tengu.execute")
+require("tengu.lsp")
 
 lvim.plugins = {
   require("plugins.copilot"),
