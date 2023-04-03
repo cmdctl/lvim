@@ -27,7 +27,7 @@ M.execute = function()
       vim.api.nvim_buf_set_lines(M.state.bufnr, -1, -1, false, data)
     end
   end
-  local jobid = vim.fn.jobstart("tengu exec", {
+  local jobid = vim.fn.jobstart("querio", {
     stdout_buffered = true,
     on_stdout = append_data,
     on_stderr = append_data,
