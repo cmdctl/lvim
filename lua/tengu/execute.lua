@@ -27,7 +27,9 @@ M.execute = function()
       vim.api.nvim_buf_set_lines(M.state.bufnr, -1, -1, false, data)
     end
   end
-  local jobid = vim.fn.jobstart("querio", {
+  -- get absolute path of the current buffer file
+  local curr_file = vim.api.nvim_buf_get_name(curr_buf)
+  local jobid = vim.fn.jobstart("querio".." "..curr_file, {
     stdout_buffered = true,
     on_stdout = append_data,
     on_stderr = append_data,
