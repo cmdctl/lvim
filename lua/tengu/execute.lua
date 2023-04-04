@@ -24,7 +24,21 @@ M.execute = function()
 
   local append_data = function(_, data, _)
     if data then
-      vim.api.nvim_buf_set_lines(M.state.bufnr, -1, -1, false, data)
+      local flattenedData = {}
+
+      -- Loop through each string in the table
+      for _, str in ipairs(data) do
+        -- if the string contains a newline, split it into multiple strings
+        if string.find(str, "\n") then
+          local splitStr = vim.split(str, "\n")
+          for _, split in ipairs(splitStr) do
+            table.insert(flattenedData, split)
+          end
+        else
+          table.insert(flattenedData, str)
+        end
+      end
+      vim.api.nvim_buf_set_lines(M.state.bufnr, -1, -1, false, flattenedData)
     end
   end
   -- get absolute path of the current buffer file
