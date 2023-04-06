@@ -6,6 +6,7 @@ require("autocmd.go-test")
 
 require("querio.execute")
 require("tengu.lsp")
+require("template-string-converter.convert")
 
 lvim.plugins = {
   require("plugins.copilot"),

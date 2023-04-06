@@ -4,11 +4,13 @@ lvim.leader = "space"
 -- move between buffers
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<C-j>"] = ","
+lvim.keys.normal_mode["<C-k>"] = ";"
 
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")
-vim.cmd("autocmd FileType typescript nmap <C-t> :JestTestsWatch<CR>")
-vim.cmd("autocmd FileType typescriptreact nmap <C-t> :JestTestsWatch<CR>")
-vim.cmd("autocmd FileType typescriptreact nmap <C-t>s :JestTestsStop<CR>")
+vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-t> :JestTestsWatch<CR>")
+vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-t>s :JestTestsStop<CR>")
+vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-s>c :ConvertToTemplateString<CR>")
 
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
@@ -24,3 +26,5 @@ lspconfig['tsserver'].setup({
     lvim.lsp.buffer_mappings.normal_mode["gd"] = { extentions.go_to_definition_typescript, "Go to definition" }
   end
 })
+
+
