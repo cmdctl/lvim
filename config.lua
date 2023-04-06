@@ -4,7 +4,7 @@ require("treesitter")
 require("formatters")
 require("autocmd.go-test")
 
-require("tengu.execute")
+require("querio.execute")
 require("tengu.lsp")
 
 lvim.plugins = {
