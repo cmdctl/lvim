@@ -94,6 +94,9 @@ M.go_tests_diagnostics = function()
           return
         end
         if decoded.Action == "run" then
+          if not decoded.Test then
+            return
+          end
           add_golang_test(state, decoded)
         elseif decoded.Action == "output" then
           if not decoded.Test then
@@ -101,15 +104,20 @@ M.go_tests_diagnostics = function()
           end
           add_golang_output(state, decoded)
         elseif decoded.Action == "pass" or decoded.Action == "fail" then
+          if not decoded.Test then
+            return
+          end
           mark_success(state, decoded)
           local test = state.tests[make_key(decoded)]
           if test.success then
             local text = { "✅" }
-            vim.api.nvim_buf_set_extmark(state.bufnr, ns, test.line, 0, {
-              virt_text = { text },
-            })
+            if test.line then
+              vim.api.nvim_buf_set_extmark(state.bufnr, ns, test.line, 0, {
+                virt_text = { text },
+              })
+            end
           end
-        elseif decoded.Action == "pause" or decoded.Action == "cont" then
+        elseif decoded.Action == "pause" or decoded.Action == "start" or decoded.Action == "cont" then
           -- ignore
         else -- unknown
           print("Unknown action: " .. vim.inspect(decoded))
