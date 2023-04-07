@@ -4,8 +4,8 @@ lvim.leader = "space"
 -- move between buffers
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["<C-j>"] = ","
-lvim.keys.normal_mode["<C-k>"] = ";"
+-- lvim.keys.normal_mode["<C-j>"] = ","
+-- lvim.keys.normal_mode["<C-k>"] = ";"
 
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")
 vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-t> :JestTestsWatch<CR>")
