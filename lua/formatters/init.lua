@@ -4,4 +4,5 @@ formatters.setup({
   require("formatters.rust"),
   require("formatters.typescript"),
   require("formatters.sql"),
+  require("formatters.python"),
 })
