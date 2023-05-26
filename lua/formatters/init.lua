@@ -6,3 +6,8 @@ formatters.setup({
   require("formatters.sql"),
   require("formatters.python"),
 })
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { name = "flake8" },
+}
