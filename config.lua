@@ -5,7 +5,7 @@ require("formatters")
 require("autocmd.go-test")
 
 require("querio.execute")
-require("gptcoder.execute")
+require("chatgpt.execute")
 require("tengu.lsp")
 require("template-string-converter.convert")
 
