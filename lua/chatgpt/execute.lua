@@ -26,6 +26,6 @@ M.execute = function()
 end
 
 vim.api.nvim_create_user_command('GptRun', M.execute, { nargs = 0 })
-vim.api.nvim_create_user_command('GptChat', 'vsplit | enew', { nargs = 0 })
+vim.api.nvim_create_user_command('GptChat', 'vsplit | enew | set filetype=markdown', { nargs = 0 })
 
 return M
