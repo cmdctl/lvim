@@ -2,9 +2,7 @@
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 local lspconfig = require('lspconfig')
 
-local function start_tsql_lsp()
-  vim.cmd("autocmd FileType text setlocal omnifunc=v:lua.vim.lsp.omnifunc")
-  -- vim.cmd("au BufRead,BufNewFile,BufEnter *.tsql setfiletype sql")
+local function start_sql_lsp()
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
   capabilities.textDocument.completion.completionItem.resolveSupport = {
@@ -15,6 +13,7 @@ local function start_tsql_lsp()
     }
   }
   -- Configure the LSP server for sql files
+  -- TODO: use custom namespace different from 'sqls' as it is used by another lsp
   lspconfig.sqls.setup({
     cmd = { "tengu", "lsp" },
     filetypes = { "sql" },
@@ -26,4 +25,4 @@ local function start_tsql_lsp()
 end
 
 -- Call the function to start the LSP server for text files
-start_tsql_lsp()
+start_sql_lsp()
