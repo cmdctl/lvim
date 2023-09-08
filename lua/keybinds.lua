@@ -6,6 +6,7 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["<C-S-J>"] = ","
 lvim.keys.normal_mode["<C-S-K>"] = ";"
+lvim.builtin.lir.show_hidden_files = true
 
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")
 
@@ -17,9 +18,9 @@ vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-s>c :Con
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
   h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" },
-  s ={ "<cmd>SqlExecute<CR>", "Execute the current SQL file to an active conenction" },
-  g ={ "<cmd>GptRun<CR>", "Execute the current buffer as a ChatGPT request" },
-  c ={ "<cmd>GptChat<CR>", "Open new gpt chat buffer" }
+  s = { "<cmd>SqlExecute<CR>", "Execute the current SQL file to an active conenction" },
+  g = { "<cmd>GptRun<CR>", "Execute the current buffer as a ChatGPT request" },
+  c = { "<cmd>GptChat<CR>", "Open new gpt chat buffer" }
 }
 -- lsp mappings
 local extentions = require('lsp_extensions')
@@ -30,5 +31,3 @@ lspconfig['tsserver'].setup({
     lvim.lsp.buffer_mappings.normal_mode["gd"] = { extentions.go_to_definition_typescript, "Go to definition" }
   end
 })
-
-

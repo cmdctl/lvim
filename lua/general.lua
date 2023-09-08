@@ -9,6 +9,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.active = true
+lvim.builtin.nvimtree.setup.renderer.group_empty = true
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.bufferline.options.show_buffer_icons = false
 lvim.builtin.lualine.options.theme = {
@@ -37,7 +38,12 @@ vim.api.nvim_exec([[
   autocmd BufEnter * set nocursorline
 ]], false)
 
-
+vim.cmd([[
+    augroup FileTypeMine
+        autocmd!
+        autocmd BufRead,BufNewFile *.tfvars set filetype=terraform
+    augroup END
+]])
 
 -- Transparent window settings
 lvim.transparent_window = true

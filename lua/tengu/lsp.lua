@@ -14,7 +14,7 @@ local function start_sql_lsp()
   }
   -- Configure the LSP server for sql files
   -- TODO: use custom namespace different from 'sqls' as it is used by another lsp
-  lspconfig.sqls.setup({
+  lspconfig.sqlls.setup({
     cmd = { "tengu", "lsp" },
     filetypes = { "sql" },
     single_file_support = true,
