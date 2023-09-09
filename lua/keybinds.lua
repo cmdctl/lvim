@@ -4,8 +4,7 @@ lvim.leader = "space"
 -- move between buffers
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["<C-S-J>"] = ","
-lvim.keys.normal_mode["<C-S-K>"] = ";"
+lvim.keys.normal_mode["<C-e>"] = ":e .<CR>"
 lvim.builtin.lir.show_hidden_files = true
 
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")

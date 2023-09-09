@@ -10,6 +10,9 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.active = true
 lvim.builtin.nvimtree.setup.renderer.group_empty = true
+lvim.builtin.nvimtree.setup.renderer.add_trailing = true
+lvim.builtin.nvimtree.setup.renderer.full_name = true
+lvim.builtin.nvimtree.setup.auto_reload_on_write = true
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.bufferline.options.show_buffer_icons = false
 lvim.builtin.lualine.options.theme = {
@@ -29,7 +32,28 @@ lvim.builtin.lualine.options.theme = {
     c = { bg = nil },
   },
   inactive = {
-    c = {  bg = nil },
+    c = { bg = nil },
+  },
+}
+
+
+lvim.builtin.dap.ui.config.layouts = {
+  {
+    elements = {
+      { id = "console", size = 1 },
+    },
+    size = 0.33,
+    position = "bottom",
+  },
+  {
+    elements = {
+      { id = "repl",        size = 0.25 },
+      { id = "scopes",      size = 0.50 },
+      { id = "breakpoints", size = 0.25 },
+      -- { id = "stacks",      size = 0.25 },
+    },
+    size = 0.2,
+    position = "left",
   },
 }
 
@@ -63,6 +87,6 @@ lvim.autocommands = {
 -- close quickfix menu after selecting choice
 vim.api.nvim_create_autocmd(
   "FileType", {
-  pattern = { "qf" },
-  command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
-})
+    pattern = { "qf" },
+    command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
+  })
