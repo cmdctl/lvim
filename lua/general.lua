@@ -90,3 +90,9 @@ vim.api.nvim_create_autocmd(
     pattern = { "qf" },
     command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
   })
+
+lvim.builtin.terminal.execs = {
+  { nil, "<M-;>", "Horizontal Terminal", "horizontal", 0.3 },
+  { nil, "<M-'>", "Vertical Terminal",   "vertical",   0.4 },
+  { nil, "<M-\\>", "Float Terminal",      "float",      nil },
+}

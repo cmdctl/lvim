@@ -16,6 +16,7 @@ lvim.plugins = {
   { "nvim-treesitter/playground" },
   require("plugins.rust"),
   { "alx741/vim-rustfmt" },
+  { "tpope/vim-dotenv" },
   require("plugins.autosave"),
   require("plugins.rest")
 }

@@ -25,7 +25,16 @@ M.execute = function()
   vim.api.nvim_buf_set_lines(curr_buf, -1, -1, false, { delimiter })
 end
 
+local function open_scratch_buffer()
+  vim.api.nvim_command('enew')
+  vim.api.nvim_buf_set_option(0, 'bufhidden', 'wipe')
+  vim.api.nvim_buf_set_option(0, 'buftype', 'nofile')
+  vim.api.nvim_buf_set_option(0, 'swapfile', false)
+  vim.api.nvim_buf_set_option(0, 'undolevels', -1)
+  vim.api.nvim_buf_set_option(0, 'filetype', 'markdown')
+end
+
 vim.api.nvim_create_user_command('GptRun', M.execute, { nargs = 0 })
-vim.api.nvim_create_user_command('GptChat', 'enew | set filetype=markdown', { nargs = 0 })
+vim.api.nvim_create_user_command('GptChat', open_scratch_buffer, { nargs = 0 })
 
 return M
