@@ -95,13 +95,29 @@ local config = {
 
 config["on_attach"] = function(client, bufnr)
   local _, _ = pcall(vim.lsp.codelens.refresh)
- require("jdtls").setup_dap({ hotcodereplace = "auto" })
- require("lvim.lsp").on_attach(client, bufnr)
+  require("jdtls").setup_dap({ hotcodereplace = "auto" })
+  require("lvim.lsp").on_attach(client, bufnr)
   local status_ok, jdtls_dap = pcall(require, "jdtls.dap")
   if status_ok then
     jdtls_dap.setup_dap_main_class_configs()
   end
 end
+
+local status_ok, dap = pcall(require, "dap")
+if not status_ok then
+  return
+end
+--Java debugger adapter settings
+dap.configurations.java = {
+  {
+    name = "Debug (Attach) - Remote",
+    type = "java",
+    request = "attach",
+    hostName = "127.0.0.1",
+    port = 5005,
+  },
+}
+
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = { "*.java" },
