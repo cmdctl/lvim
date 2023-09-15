@@ -27,7 +27,6 @@ end
 
 local function open_scratch_buffer()
   vim.api.nvim_command('enew')
-  vim.api.nvim_buf_set_option(0, 'bufhidden', 'wipe')
   vim.api.nvim_buf_set_option(0, 'buftype', 'nofile')
   vim.api.nvim_buf_set_option(0, 'swapfile', false)
   vim.api.nvim_buf_set_option(0, 'undolevels', -1)

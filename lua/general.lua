@@ -7,8 +7,7 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.active = true
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false lvim.builtin.nvimtree.active = true
 lvim.builtin.nvimtree.setup.renderer.group_empty = true
 lvim.builtin.nvimtree.setup.renderer.add_trailing = true
 lvim.builtin.nvimtree.setup.renderer.full_name = true
@@ -92,7 +91,7 @@ vim.api.nvim_create_autocmd(
   })
 
 lvim.builtin.terminal.execs = {
-  { nil, "<M-;>", "Horizontal Terminal", "horizontal", 0.3 },
+  { nil, "<A-k>", "Horizontal Terminal", "horizontal", 0.3 },
   { nil, "<M-'>", "Vertical Terminal",   "vertical",   0.4 },
-  { nil, "<M-\\>", "Float Terminal",      "float",      nil },
+  { nil, "<A-j>", "Float Terminal",      "float",      nil },
 }
