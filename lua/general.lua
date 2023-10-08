@@ -7,7 +7,8 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false lvim.builtin.nvimtree.active = true
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.active = true
 lvim.builtin.nvimtree.setup.renderer.group_empty = true
 lvim.builtin.nvimtree.setup.renderer.add_trailing = true
 lvim.builtin.nvimtree.setup.renderer.full_name = true
@@ -90,8 +91,9 @@ vim.api.nvim_create_autocmd(
     command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
   })
 
-lvim.builtin.terminal.execs = {
-  { nil, "<A-k>", "Horizontal Terminal", "horizontal", 0.3 },
-  { nil, "<M-'>", "Vertical Terminal",   "vertical",   0.4 },
-  { nil, "<A-j>", "Float Terminal",      "float",      nil },
-}
+
+vim.g.db_ui_execute_on_save = 0
+vim.cmd("autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni")
+
+-- :set nofoldenable
+vim.cmd("set nofoldenable")

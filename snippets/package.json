@@ -9,6 +9,8 @@
       { "language": "rust", "path": "./rust.json" },
       { "language": "typescriptreact", "path": "./typescriptreact.json" },
       { "language": "yaml", "path": "./yaml.json" }
+      { "language": "markdown", "path": "./markdown.json" }
+      { "language": "sql", "path": "./sql.json" }
     ]
   }
 }
