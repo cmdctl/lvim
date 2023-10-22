@@ -7,6 +7,7 @@ require("autocmd.go-test")
 require("querio.execute")
 require("chatgpt.execute")
 require("template-string-converter.convert")
+require("run-java-test.single-test")
 
 lvim.plugins = {
   { "tpope/vim-dadbod" },

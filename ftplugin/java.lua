@@ -98,6 +98,7 @@ config["on_attach"] = function(client, bufnr)
   require("jdtls").setup_dap({ hotcodereplace = "auto" })
   require("lvim.lsp").on_attach(client, bufnr)
   local status_ok, jdtls_dap = pcall(require, "jdtls.dap")
+  print(status_ok)
   if status_ok then
     jdtls_dap.setup_dap_main_class_configs()
   end

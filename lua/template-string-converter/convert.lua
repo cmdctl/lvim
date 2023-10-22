@@ -11,6 +11,7 @@ M.convert = function ()
   if node:type() ~= "string_fragment" then
     return
   end
+
   -- convert the node to template_literal
   local start_row, start_col, end_row, end_col = node:range()
   local buf = vim.api.nvim_get_current_buf()
