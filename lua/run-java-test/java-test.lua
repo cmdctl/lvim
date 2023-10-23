@@ -34,6 +34,21 @@ M.rerun_test = function()
   end
 end
 
+M.run_class = function()
+  -- get current file name
+  local file_name = vim.fn.expand('%:t:r')
+
+  local bufnr = M.get_buffer()
+  local cmd = "./mvnw clean test -Dtest=" .. file_name
+  M.last_test = cmd
+
+  vim.fn.jobstart(cmd, {
+    stdout_buffered = true,
+    on_stdout = M.append_data(bufnr),
+    on_stderr = M.append_data(bufnr),
+  })
+end
+
 
 M.run_test = function()
   -- get current file name
@@ -54,5 +69,6 @@ M.run_test = function()
 end
 
 vim.api.nvim_create_user_command('RunJavaSingleTest', M.run_test, { nargs = 0 })
-vim.api.nvim_create_user_command('RerunJavaSingleTest', M.rerun_test, { nargs = 0 })
+vim.api.nvim_create_user_command('RerunJavaTest', M.rerun_test, { nargs = 0 })
+vim.api.nvim_create_user_command('RunJavaClass', M.run_class, { nargs = 0 })
 return M
