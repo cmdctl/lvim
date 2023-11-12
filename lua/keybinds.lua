@@ -34,6 +34,16 @@ lvim.builtin.which_key.mappings["r"] = {
   g = { "<cmd>GptRun<CR>", "Execute the current buffer as a ChatGPT request" },
   c = { "<cmd>GptChat<CR>", "Open new gpt chat buffer" }
 }
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+transform",
+  o = { "<cmd>JsonScratchBuffer<CR>", "Open json buffer" },
+  t = { "<cmd>JsonToTypescript<CR>", "Convert json to typescript interface" },
+}
+lvim.builtin.which_key.mappings["o"] = {
+  name = "+openticket",
+  o = { "<cmd>CreateDevopsTicket<CR>", "Create devops ticket" },
+  t = { "<cmd>DevopsScratchBuffer<CR>", "Open devops ticket" },
+}
 -- lsp mappings
 local extentions = require('lsp_extensions')
 local lspconfig = require('lspconfig')

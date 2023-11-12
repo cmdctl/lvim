@@ -8,6 +8,8 @@ require("querio.execute")
 require("chatgpt.execute")
 require("template-string-converter.convert")
 require("run-java-test.java-test")
+require("transforms.json-to-ts")
+require("devops.open-ticket")
 
 lvim.plugins = {
   { "tpope/vim-dadbod" },
@@ -24,8 +26,3 @@ lvim.plugins = {
   require("plugins.rest")
 }
 
-vim.cmd("autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni")
-vim.cmd(
-"autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })")
-
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })

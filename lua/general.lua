@@ -99,3 +99,9 @@ vim.cmd("autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni")
 
 -- :set nofoldenable
 vim.cmd("set nofoldenable")
+
+vim.cmd("autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni")
+vim.cmd(
+"autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })")
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
