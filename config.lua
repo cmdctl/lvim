@@ -9,6 +9,9 @@ require("chatgpt.execute")
 require("template-string-converter.convert")
 require("run-java-test.java-test")
 require("transforms.json-to-ts")
+require("transforms.json-to-java")
+require("transforms.json-to-go")
+require("transforms.json-to-zod")
 require("devops.open-ticket")
 
 lvim.plugins = {

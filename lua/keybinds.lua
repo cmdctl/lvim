@@ -38,6 +38,9 @@ lvim.builtin.which_key.mappings["t"] = {
   name = "+transform",
   o = { "<cmd>JsonScratchBuffer<CR>", "Open json buffer" },
   t = { "<cmd>JsonToTypescript<CR>", "Convert json to typescript interface" },
+  j = { "<cmd>JsonToJava<CR>", "Convert json to java DTO" },
+  g = { "<cmd>JsonToGoStruct<CR>", "Convert json to golang struct" },
+  z = { "<cmd>JsonToZod<CR>", "Convert json to zod schema" }
 }
 lvim.builtin.which_key.mappings["o"] = {
   name = "+openticket",

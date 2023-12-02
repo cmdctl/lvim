@@ -1,9 +1,7 @@
 {
-  "mview-definition": {
-    "prefix": "mview",
-    "body": [
-      "SELECT pg_get_viewdef('your_materialized_view_name'::regclass, true);"
-    ],
+  "mviewdef": {
+    "prefix": "mviewdef",
+    "body": ["SELECT pg_get_viewdef($1);"],
     "description": "mview definition"
-  }
+  },
 }

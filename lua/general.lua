@@ -9,14 +9,15 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.active = true
-lvim.builtin.nvimtree.setup.auto_reload_on_write = true
 lvim.builtin.nvimtree.setup.renderer.group_empty = true
 lvim.builtin.nvimtree.setup.renderer.add_trailing = true
 lvim.builtin.nvimtree.setup.renderer.full_name = true
 lvim.builtin.nvimtree.setup.auto_reload_on_write = true
+lvim.builtin.nvimtree.setup.hijack_unnamed_buffer_when_opening = false
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.bufferline.options.show_buffer_icons = false
 lvim.builtin.telescope.theme = "center"
+lvim.builtin.lir.active = true
 lvim.builtin.lualine.options.theme = {
   normal = {
     c = { bg = nil },
@@ -37,7 +38,6 @@ lvim.builtin.lualine.options.theme = {
     c = { bg = nil },
   },
 }
- 
 
 lvim.builtin.dap.ui.config.layouts = {
   {
