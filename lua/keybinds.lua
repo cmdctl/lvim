@@ -19,6 +19,8 @@ lvim.keys.normal_mode["<C-s><C-e>"] = ":Dotenv .env<CR>"
 
 lvim.builtin.lir.show_hidden_files = true
 
+lvim.keys.insert_mode["<C-s>,"] = "<Plug>(emmet-expand-abbr)"
+
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")
 vim.cmd("autocmd FileType dbui nmap <C-s><C-s> <Plug>(DBUI_ExecuteQuery)")
 
@@ -39,6 +41,7 @@ lvim.builtin.which_key.mappings["t"] = {
   o = { "<cmd>JsonScratchBuffer<CR>", "Open json buffer" },
   t = { "<cmd>JsonToTypescript<CR>", "Convert json to typescript interface" },
   j = { "<cmd>JsonToJava<CR>", "Convert json to java DTO" },
+  p = { "<cmd>JsonToPython<CR>", "Convert json to python typedef" },
   g = { "<cmd>JsonToGoStruct<CR>", "Convert json to golang struct" },
   z = { "<cmd>JsonToZod<CR>", "Convert json to zod schema" }
 }
