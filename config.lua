@@ -1,6 +1,8 @@
 require("general")
+require("lsp")
 require("keybinds")
 require("treesitter")
+require("treesitter-templ")
 require("formatters")
 require("autocmd.go-test")
 
@@ -16,6 +18,9 @@ require("transforms.json-to-zod")
 require("devops.open-ticket")
 
 lvim.plugins = {
+  {"udalov/kotlin-vim"},
+  { "joerdav/templ.vim" },
+  { "kylechui/nvim-surround" },
   { "mattn/emmet-vim" },
   { "tpope/vim-dadbod" },
   { "kristijanhusak/vim-dadbod-ui" },
@@ -30,3 +35,6 @@ lvim.plugins = {
   require("plugins.autosave"),
   require("plugins.rest")
 }
+
+
+require("nvim-surround").setup()

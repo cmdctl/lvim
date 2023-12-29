@@ -93,6 +93,12 @@ vim.api.nvim_create_autocmd(
     command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
   })
 
+-- additional filetypes
+vim.filetype.add({
+ extension = {
+  templ = "templ",
+ },
+})
 
 vim.g.db_ui_execute_on_save = 0
 vim.cmd("autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni")
@@ -105,3 +111,4 @@ vim.cmd(
 "autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })")
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
+
