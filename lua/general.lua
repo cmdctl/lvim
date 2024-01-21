@@ -82,6 +82,14 @@ lvim.autocommands = {
   {
     "ColorScheme",
     { command = "hi NvimTreeWinSeparator guibg=NONE" }
+  },
+  {
+    "ColorScheme",
+    { command = "hi TelescopeNormal guibg=NONE" }
+  },
+  {
+    "ColorScheme",
+    { command = "hi NvimTreeNormal guibg=NONE" }
   }
 }
 

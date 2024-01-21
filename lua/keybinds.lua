@@ -29,6 +29,8 @@ vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-t>s :Jes
 
 vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-s>c :ConvertToTemplateString<CR>")
 
+vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
+
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
   h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" },
