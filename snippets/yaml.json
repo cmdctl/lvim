@@ -51,7 +51,7 @@
       "title: $1",
       "type: Bug",
       "area: Treadsy",
-      "iteration: Treadsy\\Sprint 9$2",
+      "iteration: Treadsy$2",
       "org: https://dev.azure.com/TireBuyer/",
       "project: Treadsy",
       ""
@@ -64,9 +64,10 @@
       "title: $1",
       "type: Product Backlog Item",
       "area: Treadsy",
-      "iteration: Treadsy\\Sprint 9$2",
+      "iteration: Treadsy",
       "org: https://dev.azure.com/TireBuyer/",
       "project: Treadsy",
+      "parentId: $2",
       ""
     ],
     "description": "create product backlog item"
