@@ -12,14 +12,15 @@ lvim.keys.normal_mode["<C-e>"] = ":e .env<CR>"
 lvim.keys.normal_mode["<C-s><C-w>"] = ":lua require'telescope.builtin'.grep_string()<CR>"
 
 -- dbui
-lvim.keys.normal_mode["<C-b>"] = ":DBUIToggle<CR> :NvimTreeToggle<CR>"
+lvim.keys.normal_mode["<C-b>"] = ":DBUIToggle<CR>"
 
 -- source .env file
 lvim.keys.normal_mode["<C-s><C-e>"] = ":Dotenv .env<CR>"
 
 lvim.builtin.lir.show_hidden_files = true
 
-lvim.keys.insert_mode["<C-s>,"] = "<Plug>(emmet-expand-abbr)"
+lvim.keys.insert_mode["<C-l>"] = "<Plug>(emmet-expand-abbr)"
+
 
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")
 vim.cmd("autocmd FileType dbui nmap <C-s><C-s> <Plug>(DBUI_ExecuteQuery)")
@@ -29,7 +30,7 @@ vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-t>s :Jes
 
 vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-s>c :ConvertToTemplateString<CR>")
 
-vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
+vim.cmd(":tnoremap <C-o> <C-\\><C-n>")
 
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
@@ -42,10 +43,16 @@ lvim.builtin.which_key.mappings["t"] = {
   name = "+transform",
   o = { "<cmd>JsonScratchBuffer<CR>", "Open json buffer" },
   t = { "<cmd>JsonToTypescript<CR>", "Convert json to typescript interface" },
-  j = { "<cmd>JsonToJava<CR>", "Convert json to java DTO" },
   p = { "<cmd>JsonToPython<CR>", "Convert json to python typedef" },
   g = { "<cmd>JsonToGoStruct<CR>", "Convert json to golang struct" },
-  z = { "<cmd>JsonToZod<CR>", "Convert json to zod schema" }
+  z = { "<cmd>JsonToZod<CR>", "Convert json to zod schema" },
+  y = { "<cmd>JsonToYaml<CR>", "Convert json to yaml" }
+}
+
+lvim.builtin.which_key.mappings["tj"] = {
+  name = "+j",
+  s = { "<cmd>JsonToYaml<CR>", "Convert yaml to json" },
+  a = { "<cmd>JsonToJava<CR>", "Convert json to java DTO" }
 }
 lvim.builtin.which_key.mappings["o"] = {
   name = "+openticket",

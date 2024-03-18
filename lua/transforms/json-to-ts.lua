@@ -13,7 +13,7 @@ M.execute = function()
     vim.api.nvim_buf_set_lines(curr_buf, -1, -1, false, data)
   end
 
-  local jobid = vim.fn.jobstart("tconv json ts", {
+  local jobid = vim.fn.jobstart("conv json ts", {
     stdout_buffered = false,
     on_stdout = append_data,
     on_stderr = append_data,

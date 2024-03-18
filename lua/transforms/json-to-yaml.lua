@@ -12,13 +12,13 @@ M.execute = function()
     vim.api.nvim_buf_set_lines(curr_buf, -1, -1, false, data)
   end
 
-  local jobid = vim.fn.jobstart("conv json zod", {
+  local jobid = vim.fn.jobstart("conv json yaml", {
     stdout_buffered = false,
     on_stdout = append_data,
     on_stderr = append_data,
     on_exit = function(_, code, _)
       if code == 0 then
-        vim.api.nvim_buf_set_option(curr_buf, 'filetype', 'javascript')
+        vim.api.nvim_buf_set_option(curr_buf, 'filetype', 'yaml')
       end
     end,
   })
@@ -26,6 +26,6 @@ M.execute = function()
   vim.fn.chanclose(jobid, "stdin")
 end
 
-vim.api.nvim_create_user_command('JsonToZod', M.execute, { nargs = 0 })
+vim.api.nvim_create_user_command('JsonToYaml', M.execute, { nargs = 0 })
 
 return M

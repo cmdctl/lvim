@@ -15,6 +15,8 @@ require("transforms.json-to-java")
 require("transforms.json-to-python")
 require("transforms.json-to-go")
 require("transforms.json-to-zod")
+require("transforms.json-to-yaml")
+require("transforms.yaml-to-json")
 require("devops.open-ticket")
 
 lvim.plugins = {
