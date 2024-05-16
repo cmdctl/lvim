@@ -1,5 +1,4 @@
 require("general")
-require("lsp")
 require("keybinds")
 require("treesitter")
 require("treesitter-templ")
@@ -27,16 +26,19 @@ lvim.plugins = {
   { "tpope/vim-dadbod" },
   { "kristijanhusak/vim-dadbod-ui" },
   { 'kristijanhusak/vim-dadbod-completion' },
-  require("plugins.copilot"),
   { "mfussenegger/nvim-jdtls" },
   { "jparise/vim-graphql" },
   { "nvim-treesitter/playground" },
-  require("plugins.rust"),
   { "alx741/vim-rustfmt" },
   { "tpope/vim-dotenv" },
+  {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
+  {"leoluz/nvim-dap-go"},
+  require("plugins.rust"),
+  require("plugins.copilot"),
   require("plugins.autosave"),
   require("plugins.rest")
 }
 
 
 require("nvim-surround").setup()
+require("dap-go").setup()

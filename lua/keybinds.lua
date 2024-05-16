@@ -16,11 +16,12 @@ lvim.keys.normal_mode["<C-b>"] = ":DBUIToggle<CR>"
 
 -- source .env file
 lvim.keys.normal_mode["<C-s><C-e>"] = ":Dotenv .env<CR>"
+lvim.keys.normal_mode["gr"] = ":Telescope lsp_references<CR>"
+-- lvim.lsp.buffer_mappings.normal_mode["gr"] = ":Telescope lsp_references<CR>"
 
 lvim.builtin.lir.show_hidden_files = true
 
-lvim.keys.insert_mode["<C-l>"] = "<Plug>(emmet-expand-abbr)"
-
+lvim.keys.insert_mode["<C-j>"] = "<Plug>(emmet-expand-abbr)"
 
 vim.cmd("autocmd FileType go nmap gtl :GoTestLineDiag<CR>")
 vim.cmd("autocmd FileType dbui nmap <C-s><C-s> <Plug>(DBUI_ExecuteQuery)")
@@ -51,7 +52,7 @@ lvim.builtin.which_key.mappings["t"] = {
 
 lvim.builtin.which_key.mappings["tj"] = {
   name = "+j",
-  s = { "<cmd>JsonToYaml<CR>", "Convert yaml to json" },
+  s = { "<cmd>YamlToJson<CR>", "Convert yaml to json" },
   a = { "<cmd>JsonToJava<CR>", "Convert json to java DTO" }
 }
 lvim.builtin.which_key.mappings["o"] = {
