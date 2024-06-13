@@ -30,6 +30,8 @@ local function open_scratch_buffer()
   vim.api.nvim_buf_set_option(0, 'buftype', 'nofile')
   vim.api.nvim_buf_set_option(0, 'swapfile', false)
   vim.api.nvim_buf_set_option(0, 'filetype', 'markdown')
+  vim.api.nvim_win_set_option(0, 'wrap', true)
+  vim.api.nvim_win_set_option(0, 'linebreak', true)
 end
 
 vim.api.nvim_create_user_command('GptRun', M.execute, { nargs = 0 })

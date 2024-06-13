@@ -16,8 +16,6 @@ lvim.keys.normal_mode["<C-b>"] = ":DBUIToggle<CR>"
 
 -- source .env file
 lvim.keys.normal_mode["<C-s><C-e>"] = ":Dotenv .env<CR>"
-lvim.keys.normal_mode["gr"] = ":Telescope lsp_references<CR>"
--- lvim.lsp.buffer_mappings.normal_mode["gr"] = ":Telescope lsp_references<CR>"
 
 lvim.builtin.lir.show_hidden_files = true
 
@@ -38,7 +36,8 @@ lvim.builtin.which_key.mappings["r"] = {
   h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" },
   s = { "<cmd>SqlExecute<CR>", "Execute the current SQL file to an active conenction" },
   g = { "<cmd>GptRun<CR>", "Execute the current buffer as a ChatGPT request" },
-  c = { "<cmd>GptChat<CR>", "Open new gpt chat buffer" }
+  c = { "<cmd>GptChat<CR>", "Open new gpt chat buffer" },
+  w = { "<cmd>read !mywork<CR>", "List my work items" }
 }
 lvim.builtin.which_key.mappings["t"] = {
   name = "+transform",
