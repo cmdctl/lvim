@@ -29,11 +29,11 @@ vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-t>s :Jes
 
 vim.cmd("autocmd FileType javascript,typescript,typescriptreact nmap <C-s>c :ConvertToTemplateString<CR>")
 
-vim.cmd(":tnoremap <C-o> <C-\\><C-n>")
+vim.cmd(":tnoremap <ESC> <C-\\><C-n>")
 
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
-  h = { "<cmd>lua require('rest-nvim').run()<CR>", "HTTP request under cursor" },
+  h = { "<cmd>Httpx<CR>", "execute HTTP request" },
   s = { "<cmd>SqlExecute<CR>", "Execute the current SQL file to an active conenction" },
   g = { "<cmd>GptRun<CR>", "Execute the current buffer as a ChatGPT request" },
   c = { "<cmd>GptChat<CR>", "Open new gpt chat buffer" },

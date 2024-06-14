@@ -5,8 +5,8 @@ require("treesitter-templ")
 require("formatters")
 require("autocmd.go-test")
 
-require("querio.execute")
 require("chatgpt.execute")
+require("httpx.execute")
 require("template-string-converter.convert")
 require("run-java-test.java-test")
 require("transforms.json-to-ts")
@@ -36,7 +36,7 @@ lvim.plugins = {
   require("plugins.rust"),
   require("plugins.copilot"),
   require("plugins.autosave"),
-  require("plugins.rest")
+  {"BlackLight/nvim-http"}
 }
 
 
